@@ -17,7 +17,7 @@ const filterMessages = ({ chat_history }: { chat_history: BaseMessage[] }) => {
     return chat_history.slice(-10);
 };
 const makeChatChain = (onTokenStream?: (token: string) => void) => {
-    const model = new ChatOpenAI({apiKey: "d1bf9bc27334a7c6c9308d3d8d69d24e", azureOpenAIBasePath: "https://flag.smarttrot.com/v1/"})
+    const model = new ChatOpenAI({})
     const chatChain = RunnableSequence.from([
         CHAT_BOT_PROMPT,
         model,
